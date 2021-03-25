@@ -1,4 +1,10 @@
-package com.atawakl;
+/*
+ * AUTHOR: Aman Tawakley
+ * DATE: March 24, 2021
+ * DESC:
+ */
+
+package com.atawakl.vault;
 
 public class LoginItem {
     private String TITLE;
