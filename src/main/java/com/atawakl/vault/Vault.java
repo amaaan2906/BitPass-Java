@@ -9,7 +9,7 @@ package com.atawakl.vault;
 import java.util.HashMap;
 
 public class Vault {
-    private HashMap<Integer, LoginItem> VAULT;
+    private HashMap<Integer, VaultItem> VAULT;
 
     public Vault() {
         this.VAULT = new HashMap<>();
@@ -19,7 +19,7 @@ public class Vault {
         return VAULT.size();
     }
 
-    public int insert(LoginItem value) {
+    public int insert(VaultItem value) {
         try {
             VAULT.put(value.getTitle().toUpperCase().hashCode(), value);
             return 1;
@@ -40,7 +40,7 @@ public class Vault {
         }
     }
 
-    public LoginItem get(String key) {
+    public VaultItem get(String key) {
         key = key.toUpperCase();
         try {
             return VAULT.get(key.hashCode());

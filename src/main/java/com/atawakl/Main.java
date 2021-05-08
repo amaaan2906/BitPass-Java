@@ -1,7 +1,13 @@
 package com.atawakl;
 
-import com.atawakl.vault.LoginItem;
+import com.atawakl.utils.VaultBuilder;
+import com.atawakl.vault.VaultItem;
 import com.atawakl.vault.Vault;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Main {
     /**
@@ -26,12 +32,21 @@ public class Main {
 
     public static void main(String[] args) {
         Vault one = new Vault();
-        LoginItem fb = new LoginItem("Facebook", "fb.com", "aman.tawakley", "secret");
+        VaultItem fb = new VaultItem("Facebook", "aman.tawakley", "secret", "fb.com");
         one.insert(fb);
-        fb = new LoginItem("Facebook2", "fb.com", "aman.tawakley", "secrdet");
+        fb = new VaultItem("Facebook2", "aman.tawakley", "secrdet", "fb.com");
         one.insert(fb);
         one.print();
         System.out.println(one.remove("facebook"));
         one.print();
+
+        Vault two = new Vault();
+        VaultBuilder vb = VaultBuilder.getInstance();
+        vb.buildVault(two, new File("example.txt"));
+        two.print();
+
+        Vault three = new Vault();
+        VaultBuilder vb2 = VaultBuilder.getInstance();
+        vb2.buildVault(three, new File("example.txt"));
     }
 }

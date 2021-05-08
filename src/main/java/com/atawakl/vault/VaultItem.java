@@ -6,17 +6,17 @@
 
 package com.atawakl.vault;
 
-public class LoginItem {
+public class VaultItem {
     private String TITLE;
     private String URL;
     private String USERNAME;
     private String PWD;
 
-    public LoginItem(String t, String u, String n, String p) {
+    public VaultItem(String t, String n, String p, String u) {
         this.TITLE = t;
+        this.USERNAME = n;
         this.PWD = p;
         this.URL = u;
-        this.USERNAME = n;
     }
     public String getTitle() {
         return this.TITLE;
